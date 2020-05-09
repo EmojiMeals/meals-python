@@ -10,8 +10,9 @@ with open(RECIPE_PATH, 'r') as fp:
     for recipe, result in recipes.items():
         sorted_recipes[''.join(sorted(recipe))] = result
 
-def mealify(recipe):
+def mealify(*args):
+    recipe = "".join(sorted("".join([arg for arg in args])))
     try:
-        return sorted_recipes[''.join(sorted(recipe))]
-    except:
+        return sorted_recipes[recipe]
+    except KeyError:
         return None
