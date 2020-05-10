@@ -1,4 +1,5 @@
-# meals-python ![emoji? yes](https://img.shields.io/badge/emoji%3F-%F0%9F%91%8D-brightgreen)
+# meals-python ![emoji? yes](https://img.shields.io/badge/emoji%3F-%F0%9F%91%8D-brightgreen) ![Tests](https://github.com/EmojiMeals/meals-python/workflows/Tests/badge.svg?branch=master)
+
 Find what you can cook with your emojis
 
 ## get started
@@ -6,7 +7,7 @@ Find what you can cook with your emojis
 install the package:
 
 ```console
-pip install emoji-meal
+pip install emoji-meals
 ```
 
 then start using it:
@@ -23,11 +24,17 @@ mealify("🍞","🍅","🧀")
 ```python
 mealify("🌚","🍰") #=> "🥮"
 
-# it is not order dependent 💯💯IQ 🧠💥
+# Provide ingredients in any order 💯💯IQ 🧠💥
 mealify("🍰", "🌚") #=> "🥮"
 
 # Use more than two items!
 mealify("🍞","🍅","🧀") #=> "🍕"
+
+# Provde a single argument!
+mealify("🍞🍅🧀") #=> "🍕"
+
+# Group your ingredients however you want!
+mealify("🍞🍅", "🧀") #=> "🍕"
 
 # After all this eating, I need a drink
 mealify("🍶","🍾","🍷","🍸","🍶","🍹","🍺","🍻","🥂","🍾","🥃") #=> "🤮"

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="emoji_meals", # Replace with your own username
-    version="0.0.1",
+    version="0.0.2",
     author="Sam Wheating",
     author_email="SamWheating@gmail.com",
     description="Find what you can cook with your emojis 👨‍🍳",

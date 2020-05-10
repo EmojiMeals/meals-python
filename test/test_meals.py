@@ -5,10 +5,19 @@ class TestRecipes(unittest.TestCase):
 
     def test_order_invariant(self):
         expected = "🍝"
-        actual = mealify("🌾🍅")
-        self.assertEqual(expected, actual)
-        actual = mealify("🍅🌾")
-        self.assertEqual(expected, actual)
+        self.assertEqual(mealify("🌾🍅"), expected)
+        self.assertEqual(mealify("🍅🌾"), expected)
+
+    def test_multiple_args(self):
+        expected = "🍝"
+        self.assertEqual(mealify("🌾","🍅"), expected)
+        self.assertEqual(mealify("🍅","🌾"), expected)
+
+    def test_odd_grouping(self):
+        expected = "🍕"
+        self.assertEqual(mealify("🍞🍅", "🧀"), expected)
+        self.assertEqual(mealify("🍞","🍅🧀"), expected)
+        self.assertEqual(mealify("🍞","🧀🍅"), expected)
 
     def test_returns_none(self):
         self.assertIsNone(mealify(""))
